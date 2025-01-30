@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    background: linear-gradient(135deg, rgba(194, 44, 255, 0.5), rgba(85, 61, 169, 0.5));
+}
+
+.container, nav{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* navegation bar */
+nav ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #fff;
+    padding: 10px 0;
+    list-style: none;
+    font-size: 3svh;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #ffffffa5;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+    font-weight: 800;
+    font-size: 4svh;
+    color: rgba(194, 44, 255, 0.5) ;
+}
+
+
+/* hero section */
+.hero-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    color: #fff;
+    align-items: center;
+    gap: 20px;
+}
+.hero-desc-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+}
+
+.hero-desc-section h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-desc-section p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: start;
+}
+
+.hero-desc-section button{
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+/* importance of read books section*/
+.importance-books{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+column-gap: 3svh;
+    color: #fff;
+}
+
+.importance-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-importance-books{
+    grid-column: span 3 / span 3;
+    align-self: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.importance-item-1, .importance-item-2, .importance-item-3{
+    grid-row: span 3 / span 3;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1svh;
+}
+.importance-item-1 img, .importance-item-2 img, .importance-item-3 img{
+    width: 50svh;
+    object-fit: cover;
+}
+.importance-item-1 h2, .importance-item-2 h2, .importance-item-3 h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}   
+.importance-item-1 p, .importance-item-2 p, .importance-item-3 p{
+    font-size: 1rem;
+    font-weight: 500;
+}   
+
+.books-you-look{
+    background-color: #fff;
+    
+}
+
