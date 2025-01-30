@@ -12,7 +12,13 @@ body{
     background: linear-gradient(135deg, rgba(194, 44, 255, 0.5), rgba(85, 61, 169, 0.5));
 }
 
-.container, nav{
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10svh;
+}
+
+.container, nav, .importance-books{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -94,7 +100,7 @@ nav ul li:first-child {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-column-gap: 3svh;
+    column-gap: 3svh;
     color: #fff;
 }
 
@@ -123,7 +129,7 @@ column-gap: 3svh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1svh;
+    row-gap: 1.3svh;
 }
 .importance-item-1 img, .importance-item-2 img, .importance-item-3 img{
     width: 50svh;
@@ -136,10 +142,64 @@ column-gap: 3svh;
 .importance-item-1 p, .importance-item-2 p, .importance-item-3 p{
     font-size: 1rem;
     font-weight: 500;
+    text-align: justify;
 }   
 
+
+
+
+
+/*books-you-look*/
+
 .books-you-look{
-    background-color: #fff;
-    
+    background-color: #fff;   
 }
 
+.books-you-look-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.Download-samples{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 4svh;
+}
+
+.Download-samples-item1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 6svh;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 3svh 6svh;
+    color:rgba(85, 61, 169, 1); 
+
+}
+
+.Download-samples-item1 img{
+    width: 30svh;
+    object-fit: cover;
+}
+
+.Download-samples-item2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 6svh;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 3svh 6svh;
+    color: rgba(85, 61, 169, 1); 
+}
+
+.Download-samples-item2 img{
+    width: 30svh;
+    object-fit: cover;
+}
