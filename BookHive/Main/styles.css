@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f5f5;
+  background: linear-gradient(135deg, rgba(194, 44, 255, 0.5), rgba(85, 61, 169, 0.5));
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 13vh;
+}
+
+.container,
+nav,
+.importance-books {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* navigation bar */
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
+  padding: 10px 0;
+  list-style: none;
+  font-size: 3vh;
+  font-weight: 500;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  color: #ffffffa5;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+  font-weight: 800;
+  font-size: 4vh;
+  color: rgba(194, 44, 255, 0.5);
+}
+
+/* hero section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  color: #fff;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-desc-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.hero-desc-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-desc-section p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: start;
+}
+
+.hero-desc-section button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.hero-desc-section button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-img-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* importance of read books section*/
+.importance-books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  color: #fff;
+}
+
+.header-importance-books {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.importance-item-1,
+.importance-item-2,
+.importance-item-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.importance-item-1 img,
+.importance-item-2 img,
+.importance-item-3 img {
+  width: 100%;
+  max-width: 200px;
+  object-fit: cover;
+}
+
+.importance-item-1 h2,
+.importance-item-2 h2,
+.importance-item-3 h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.importance-item-1 p,
+.importance-item-2 p,
+.importance-item-3 p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Download samples */
+.Download-samples {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Download-samples-item1,
+.Download-samples-item2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  color: rgba(85, 61, 169, 1);
+}
+
+.Download-samples-item1 img,
+.Download-samples-item2 img {
+  width: 100px;
+  object-fit: cover;
+}
+
+/* footer section */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(85, 61, 169, 1);
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 50px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  nav ul {
+    font-size: 2.5vh;
+  }
+
+  nav ul li:first-child {
+    font-size: 3vh;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 80vh;
+  }
+  
+  .hero-img-section img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hero-desc-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-desc-section p {
+    font-size: 1rem;
+  }
+
+  .importance-books {
+    grid-template-columns: 1fr;
+  }
+
+  .Download-samples-item1,
+  .Download-samples-item2 {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li:first-child {
+    margin-bottom: 10px;
+  }
+
+  .hero-desc-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc-section p {
+    font-size: 0.9rem;
+  }
+
+  .importance-item-1 h2,
+  .importance-item-2 h2,
+  .importance-item-3 h2 {
+    font-size: 1.1rem;
+  }
+
+  .importance-item-1 p,
+  .importance-item-2 p,
+  .importance-item-3 p {
+    font-size: 0.9rem;
+  }
+
+  .Download-samples-item1 h2,
+  .Download-samples-item2 h2 {
+    font-size: 1.1rem;
+  }
+}
+
