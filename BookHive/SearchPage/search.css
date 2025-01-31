@@ -14,12 +14,6 @@ body {
   min-height: 100vh;
 }
 
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .container {
   flex: 1;
   display: flex;
@@ -167,14 +161,14 @@ nav ul li:first-child {
     max-height: 40vh;
   }
 }
-
 @media screen and (min-width: 1024px) {
   nav ul {
     font-size: 18px;
+    font-size: 3vh;
   }
 
   nav ul li:first-child {
-    font-size: 28px;
+    font-size: 4vh;
   }
 
   .text p {
