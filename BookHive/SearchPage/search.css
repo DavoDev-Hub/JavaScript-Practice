@@ -161,6 +161,7 @@ nav ul li:first-child {
     max-height: 40vh;
   }
 }
+
 @media screen and (min-width: 1024px) {
   nav ul {
     font-size: 18px;
