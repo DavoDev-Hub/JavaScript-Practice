@@ -6,6 +6,7 @@ document
     search = document.getElementById("id-input-search").value;
     disableImg();
     showBooks();
+    showBooks(search);
   });
 
 function disableImg() {
