@@ -83,6 +83,8 @@ body{
     margin-bottom: 82px;
     overflow-y:auto;
     flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: #ccccf5 transparent;
 }
 
 .chat-body .message{
@@ -116,7 +118,13 @@ body{
 .chat-body .user-message  .message-text{
     color: #fff;
     background: #5350C4;
-    border-radius: 13px 13px 13px 3px;
+    border-radius: 13px 13px 3px 13px;
+}
+
+.chat-body .user-message .attachment{
+    width: 50%;
+    margin-top: -7px;
+    border-radius: 13px 3px 13px 13px;
 }
 
 .chat-body .bot-message .bot-avatar{
