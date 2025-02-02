@@ -2,6 +2,7 @@ const chatBody = document.querySelector(".chat-body");
 const messageInput = document.querySelector(".message-input");
 const sendMessageButton = document.querySelector("#send-message");
 const fileInput = document.querySelector("#file-input");
+const fileUploadWrapper = document.querySelector("#file-upload-wrapper");
 
 // API setup
 const API_KEY = "AIzaSyDQxeVmzpnXp0eZ7mxfAJo5fKTO4j3S-m8";
@@ -128,12 +129,14 @@ messageInput.addEventListener("keydown", (e) => {
   }
 });
 
-// Handle file input change
+// Handle file input change and preview the selected file
 fileInput.addEventListener("change", () => {
   const file = fileInput.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = (e) => {
+    fileUploadWrapper.querySelector("img").src = e.target.result;
+    fileUploadWrapper.classList.add("file-uploaded");
     const base64String = e.target.result.split(",")[1];
 
     //store file data in UserData
