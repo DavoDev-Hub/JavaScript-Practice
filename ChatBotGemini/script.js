@@ -5,8 +5,7 @@ const fileInput = document.querySelector("#file-input");
 const fileUploadWrapper = document.querySelector("#file-upload-wrapper");
 
 // API setup
-const API_KEY = "AIzaSyDQxeVmzpnXp0eZ7mxfAJo5fKTO4j3S-m8";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.API_KEY}`;
 
 const userData = {
   message: null,
@@ -30,7 +29,7 @@ const generateBotResponse = async (incomingMessageDiv) => {
   // AI request options
   const requestOptions = {
     method: "POST",
-    headers: { "Content-Type": "aplication/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       contents: [
         {
