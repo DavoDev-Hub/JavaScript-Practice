@@ -1,54 +1,48 @@
 const gameBoard = document.getElementById("game-board");
 let direction = "right";
 let gameInterval;
+let score = 0;
+let highScore = localStorage.getItem("highScore") || 0;
+let snake = [
+  { x: 10, y: 10 },
+  { x: 9, y: 10 },
+  { x: 8, y: 10 },
+];
+let food = { x: 5, y: 5 };
 
+// BOARD
 for (let i = 0; i < 400; i++) {
-  const cell = document.createElement("div"); // creamos un nuevo div
-
-  cell.setAttribute("data-index", i); // le agregamos el atributo para poder identificarlos
-
-  gameBoard.appendChild(cell); // Agrega nuevo div al nodo
+  const cell = document.createElement("div");
+  cell.setAttribute("data-index", i);
+  gameBoard.appendChild(cell);
 }
 
-// Representamos a la serpiente en un array de objetos
-let snake = [
-  { x: 10, y: 10 }, // Cabeza
-  { x: 9, y: 10 }, // Cuerpo
-  { x: 8, y: 10 }, // Cola
-];
-
-let food = [{ x: 5, y: 5 }];
-
+// SNAKE
 function drawSnake() {
-  const cells = document.querySelectorAll("#game-board div"); // seleccionamos las celdas
-  // removemos cualquier rastro de celda anterior
-  cells.forEach((cell) => cell.classList.remove("snake"));
+  const cells = document.querySelectorAll("#game-board div");
+  cells.forEach((cell) => {
+    cell.classList.remove("snake", "food");
+  });
 
-  /* Pintamos a la serpiente localizandola
-        10 * 20 + 10 = 210 ubicacion de la cabeza
-        9 * 20 + 10 = 209 ubicacion del cuerpo
-        8 * 30 + 10 = 208 ubicacion de la cola
-  */
   snake.forEach((part) => {
     const index = part.y * 20 + part.x;
-    cells[index].classList.add("snake"); // la pintamos con la clase
+    cells[index].classList.add("snake");
   });
 
   const foodIndex = food.y * 20 + food.x;
   cells[foodIndex].classList.add("food");
 }
 
-// Generar comida aleatoria
-function generateFood() {
-  food.x = Math.floor(Math.random() * 20);
-  food.y = Math.floor(Math.random() * 20);
+// SNAKE MOVE
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowUp" && direction !== "down") direction = "up";
+  else if (event.key === "ArrowDown" && direction !== "up") direction = "down";
+  else if (event.key === "ArrowLeft" && direction !== "right")
+    direction = "left";
+  else if (event.key === "ArrowRight" && direction !== "left")
+    direction = "right";
+});
 
-  if (snake.some((part) => part.x === food.x && part.y === food.y)) {
-    generateFood();
-  }
-}
-
-// funcion para establecer el movimiento de la serpiente
 function moveSnake() {
   const head = { ...snake[0] };
 
@@ -61,54 +55,51 @@ function moveSnake() {
 
   if (head.x === food.x && head.y === food.y) {
     generateFood();
+    updateScore();
   } else {
     snake.pop();
   }
+  if (CheckCollision()) {
+    stopGame();
+  }
 }
 
-setInterval(() => {
-  moveSnake();
-  drawSnake();
-}, 200);
+// FOOD
+function generateFood() {
+  food.x = Math.floor(Math.random() * 20);
+  food.y = Math.floor(Math.random() * 20);
 
-// Establecer los eventos
-document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowUp" && direction !== "down") direction = "up";
-  else if (event.key === "ArrowDown" && direction !== "up") direction = "down";
-  else if (event.key === "ArrowLeft" && direction !== "right")
-    direction = "left";
-  else if (event.key === "ArrowRight" && direction !== "left")
-    direction = "right";
-});
+  if (snake.some((part) => part.x === food.x && part.y === food.y)) {
+    generateFood();
+  }
+}
+generateFood();
 
+// GAME SETTINGS
 function startGame() {
   gameInterval = setInterval(() => {
     moveSnake();
     drawSnake();
   }, 200);
 }
-
 function stopGame() {
   clearInterval(gameInterval);
   alert("Game Over!");
   resetGame();
 }
-
 function resetGame() {
   snake = [
     { x: 10, y: 10 },
     { x: 9, y: 10 },
     { x: 8, y: 10 },
   ];
+  score = 0;
   direction = "right";
   generateFood();
   startGame();
 }
-
 function CheckCollision() {
   const head = snake[0];
-
-  // Colision en los bordes
   if (head.x < 0 || head.x >= 20 || head.y < 0 || head.y >= 20) {
     return true;
   }
@@ -119,4 +110,19 @@ function CheckCollision() {
     }
   }
   return false;
+}
+
+startGame();
+
+//SCORE
+function updateScore() {
+  score++;
+  document.getElementById("score").textContent = `🍎: ${score}`;
+
+  //Actualizar la puntuacion mas alta
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem("🏆", highScore);
+  }
+  document.getElementById("high-score").textContent = `🏆: ${highScore}`;
 }
