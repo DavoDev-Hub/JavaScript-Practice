@@ -1,32 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
+
+#game-board{
+    display: grid;
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
 }
 
-body{
-    box-sizing: border-box;
-    background: #000;
+#game-board div{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+.snake {
+    background-color: green; /* Color de la serpiente */
 }
 
-.container-child{
-    background-color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 90%;
+.food {
+    background-color: red; /* Color de la comida */
 }
 
-canvas{
-    border: 2px solid black;
-    width: 70%;
-    background-color: #008f39;
+#score {
+    margin-top: 20px;
+    font-size: 24px;
 }
