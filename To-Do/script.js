@@ -1,21 +1,21 @@
-const buttonAdd = document.getElementById("add");
-const listTask = document.getElementById("listTask");
-const taskValue = [];
+const todoInput = document.querySelector(".todo-input");
+const todoButton = document.querySelector(".todo-button");
+const todoList = document.querySelector(".todo-list");
+const filterOption = document.querySelector(".filter-todo");
 
-buttonAdd.addEventListener("click", () => {
-  addTask();
-});
+document.addEventListener("DOMContentLoaded", getLocalTodos);
+todoButton.document.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteCheck);
+filterOption.addEventListener("change", filterTodo);
 
-function addTask() {
-  const taskInput = document.getElementById("task-input");
-  const taskAdd = taskInput.value;
+function addTodo(event) {
+  event.preventDefault();
+  const todoDiv = document.createElement("div");
+  todoDiv.classList.add("todo");
+  const newTodo = document.createElement("li");
+  newTodo.innerText = todoInput.value;
+  newTodo.classList.add("todo-item");
+  todoDiv.appendChild(newTodo);
 
-  if (taskAdd.trim() !== "") {
-    taskValue.push(taskAdd);
-    const listTaskItem = document.createElement("div");
-    listTaskItem.textContent = taskAdd;
-    listTaskItem.classList.add("task-item");
-    listTask.appendChild(listTaskItem);
-    taskInput.value = "";
-  }
+  saveLocalTodos(todoInput.value);
 }
