@@ -1,23 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: mediumslateblue;
     color: white;
-    font-family: "Poppinns", sans-serif;
+    font-family: "Poppins", sans-serif;
     min-height: 100vh;
 }
 
-header{
+header {
     font-size: 1.5rem;
 }
 
-
-header,
-form{
+header, 
+form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
@@ -25,46 +24,46 @@ form{
 }
 
 form input, 
-form button{
+form button {
     padding: 0.5rem;
     padding-left: 1rem;
-    font-size: 1.8em;
+    font-size: 1.8rem;
     border: none;
-    background: #fff;
-    background-repeat: 2rem;
+    background: white;
+    border-radius: 2rem;
 }
 
-form button{
-    color:rgb(255, 200, 0);
-    background: white ;
+form button {
+    color: rgb(255, 200, 0);
+    background: white;
     cursor: pointer;
     transition: all 0.3 ease;
     margin-left: 0.5rem;
 }
 
-form button:hover{
+form button:hover {
     color: white;
-    background:rgb(255, 200, 0);
+    background: rgb(255, 200, 0);
 }
 
-.fa-plus-circle{
+.fa-plus-circle {
     margin-top: 0.3rem;
     margin-left: -8px;
 }
 
-.todo-container{
+.todo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.todo-list{
+.todo-list {
     min-width: 30%;
     list-style: none;
 }
 
-.todo{
-    margin: 0.5em;
+.todo {
+    margin: 0.5rem;
     padding-left: 0.5rem;
     background: white;
     color: black;
@@ -73,17 +72,15 @@ form button:hover{
     justify-content: space-between;
     align-items: center;
     transition: 0.5s;
-    background-repeat: 2rem;
+    border-radius: 2rem;
 }
 
-
-.todo li{
+.todo li {
     flex: 1;
 }
 
-
-.trash-btn,
-.complete-btn{
+.trash-btn, 
+.complete-btn {
     color: white;
     border: none;
     padding: 1rem;
@@ -91,29 +88,18 @@ form button:hover{
     font-size: 1.5rem;
 }
 
-.complete-btn{
-    background:rgb(255, 200, 0);
+.complete-btn {
+    background: rgb(255, 200, 0);
 }
 
-.trash-btn{
+.trash-btn {
     border-top-right-radius: 1.75rem;
     border-bottom-right-radius: 1.75rem;
-    background:rgb(171, 171, 171) ;
+    background: rgb(171, 171, 171);
 }
 
-.todo-item{
+.todo-item {
     padding: 0rem 0.5rem;
-}
-
-.fa-trash,
-.fa-check-circle{
-    pointer-events: none;
-}
-
-
-.completed{
-    text-decoration: line-through;
-    opacity: 0.5;
 }
 
 .fa-trash, 
@@ -130,6 +116,7 @@ form button:hover{
     transform: translateX(10rem);
     opacity: 0;
 }
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
