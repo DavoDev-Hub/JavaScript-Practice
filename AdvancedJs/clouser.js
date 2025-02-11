@@ -1,12 +1,19 @@
-function outer() {
-  let counter = 0;
-  function inner() {
-    counter++;
-    console.log(counter);
-  }
-  return inner;
+function createCounter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
 }
 
-const fn = outer(); // 1
-fn(); // 1
-fn(); // 2
+// Creamos dos contadores independientes
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+counter1(); // ? // 1
+counter1(); // ? // 2
+
+counter2(); // ? // 1
+counter2(); // ? // 2
+counter1(); // ? // 3
