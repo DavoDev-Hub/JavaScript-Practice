@@ -31,13 +31,13 @@ function addTodo(event) {
 function deleteCheck(event) {
   const item = event.target;
 
-  if (item.classList[0] === "trash-button") {
-    const todo = item.parentElement;
+  if (item.closest(".trash-button")) {
+    const todo = item.closest(".todo-div");
     todo.remove();
   }
 
-  if (item.classList[0] === "completed-button") {
-    const todo = item.parentElement;
+  if (item.closest(".completed-button")) {
+    const todo = item.closest(".todo-div");
     todo.classList.toggle("completed");
   }
 }
