@@ -23,3 +23,5 @@ const add2 = curriedSum(2);
 const add3 = add2(3);
 const add5 = add3(5);
 console.log(add5());
+
+// pendiente
