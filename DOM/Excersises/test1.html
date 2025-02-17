@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST NO.1</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        color: blueviolet;
+      }
+      button {
+        background-color: black;
+        color: white;
+        min-width: 300px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test Yourself</h1>
+    <h2>getElementsByCLassName()</h2>
+    <div class="items">
+      <button onclick="green()" class="green">
+        Click to change this to green
+      </button>
+      <button onclick="blue()" class="blue">
+        Click to change this to blue
+      </button>
+      <button onclick="red()" class="red">Click to change this to red</button>
+      <button onclick="undo()" class="undo">Undo</button>
+    </div>
+  </body>
+  <script>
+    let greenButton = document.getElementsByClassName("green");
+    let blueButton = document.getElementsByClassName("blue");
+    let redButton = document.getElementsByClassName("red");
+    let items = document.getElementsByClassName("items");
+
+    function green() {
+      for (let i = 0; i < greenButton.length; i++) {
+        greenButton[i].style.backgroundColor = "green";
+      }
+    }
+
+    function blue() {
+      for (let i = 0; i < blueButton.length; i++) {
+        blueButton[i].style.backgroundColor = "blue";
+      }
+    }
+    function red() {
+      for (let i = 0; i < redButton.length; i++) {
+        redButton[i].style.backgroundColor = "red";
+      }
+    }
+
+    function undo() {
+      for (let i = 0; i < greenButton.length; i++) {
+        greenButton[i].style.backgroundColor = "black";
+      }
+      for (let i = 0; i < redButton.length; i++) {
+        redButton[i].style.backgroundColor = "black";
+      }
+      for (let i = 0; i < blueButton.length; i++) {
+        blueButton[i].style.backgroundColor = "black";
+      }
+    }
+  </script>
+</html>
