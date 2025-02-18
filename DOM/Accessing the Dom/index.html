@@ -71,5 +71,21 @@
     for (let i = 0; i < classElements.length; i++) {
       classElements[i].style.backgroundColor = "blue";
     }
+
+    // getElementsByTagName
+    let tagElements = document.getElementsByTagName("p");
+    for (let i = 0; i < tagElements.length; i++) {
+      tagElements[i].style.backgroundColor = "purple";
+    }
+
+    // querySelector
+    let queryElement = document.querySelector("#query");
+    queryElement.style.backgroundColor = "yellow";
+
+    // querySelectorAll
+    let querySelectorAll = document.querySelectorAll(".query-all");
+    querySelectorAll.forEach((element) => {
+      element.style.backgroundColor = "brown";
+    });
   </script>
 </html>
