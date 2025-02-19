@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live vs Staric list</title>
+  </head>
+  <body>
+    <ul>
+      <li>BAM</li>
+      <li>POW</li>
+      <li>KAZAM</li>
+    </ul>
+    <script>
+      // HTML COLLECTION TIME
+      // lets acces our list items
+      let listItems_tags = document.getElementsByTagName("li");
+      console.log(listItems_tags.length);
+
+      //lets modify the DOM and add a list item
+      listItems_tags[0].parentNode.appendChild(document.createElement("li"));
+      console.log(listItems_tags);
+      console.log(listItems_tags.length);
+
+      // NODE LIST TIME
+      //lets grab all of our list tags
+      let listItems = document.querySelectorAll("li");
+      // we can see it returns a node list
+      console.log(listItems);
+      console.log(listItems.length);
+      //lets add to the list and prove that the NodeList is static
+      listItems[0].parentNode.appendChild(document.createElement("li"));
+      console.log(listItems);
+      console.log(listItems.length);
+      // lets requery the DOM
+      listItems = document.querySelectorAll("li");
+      console.log(listItems);
+      console.log(listItems.length);
+    </script>
+  </body>
+</html>
