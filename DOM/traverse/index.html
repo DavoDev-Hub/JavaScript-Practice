@@ -6,7 +6,7 @@
     <title>Traverse The Dom</title>
     <style>
       * {
-        border: 2px solid #dedede;
+        border: 2px solid black;
         padding: 15px;
         margin: 15px;
       }
@@ -29,11 +29,25 @@
         <h2 class="joke">Joke od the day</h2>
         <p>What doo you call fish with no eyes? ... fsh</p>
       </div>
+      <ul>
+        <li>Item 1</li>
+        <li style="background-color: green">Item 2</li>
+        <li>Item 3</li>
+      </ul>
     </main>
   </body>
   <script>
     const wrapper = document.getElementsByTagName("div")[0];
     let bcolor = wrapper.parentElement.parentElement;
-    bcolor.style.backgroundColor = "red";
+    bcolor.style.backgroundColor = "#deded8";
+
+    let ul = document.getElementsByTagName("ul")[0];
+    console.log(ul.children);
+
+    let middle = ul.children[1];
+    console.log(middle);
+
+    middle.previousElementSibling.style.backgroundColor = "red";
+    middle.nextElementSibling.style.backgroundColor = "purple";
   </script>
 </html>
