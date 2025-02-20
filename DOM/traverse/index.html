@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traverse The Dom</title>
+    <style>
+      * {
+        border: 2px solid #dedede;
+        padding: 15px;
+        margin: 15px;
+      }
+      body {
+        max-width: 600px;
+        font-family: serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Welcome</h1>
+      <div id="wrapper">
+        <h2 class="sub-heading">Traversing the DOM</h2>
+        <p>How do we do it?</p>
+        <p>Stick around, and I'll show you</p>
+      </div>
+      <div id="wrapper">
+        <h2 class="joke">Joke od the day</h2>
+        <p>What doo you call fish with no eyes? ... fsh</p>
+      </div>
+    </main>
+  </body>
+  <script>
+    const wrapper = document.getElementsByTagName("div")[0];
+    let bcolor = wrapper.parentElement.parentElement;
+    bcolor.style.backgroundColor = "red";
+  </script>
+</html>
