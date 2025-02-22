@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Am I real?</h1>
+  </body>
+  <script>
+    let newElement = document.createElement("p");
+    newElement.textContent = "or am I a figment of your imagination? ";
+
+    // lets grab the body and h1 tag
+    let h1Element = document.querySelector("h1");
+    let bodyElement = document.querySelector("body");
+
+    // lets trick the insertBefore Function
+    let h1NextElement = h1Element.nextElementSibling;
+    bodyElement.insertBefore(newElement, h1NextElement);
+  </script>
+</html>

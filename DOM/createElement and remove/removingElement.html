@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Am I real?</h1>
+  </body>
+
+  <script>
+    let newElement = document.createElement("p");
+    newElement.textContent = "or am I a figment of your imagination? ";
+
+    // add
+    let bodyElement = document.querySelector("body");
+    bodyElement.appendChild(newElement);
+
+    // remove this paragraph from the DOM
+
+    // bodyElement.removeChild(newElement);
+    // newElement.parentNode.removeChild(newElement);
+
+    newElement.remove();
+  </script>
+</html>

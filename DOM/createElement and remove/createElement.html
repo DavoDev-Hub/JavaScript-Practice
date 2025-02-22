@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>createElement</title>
+    <style>
+      body {
+        background-color: rgb(74, 59, 206);
+        padding: 30px;
+      }
+      h1 {
+        color: #14fff7;
+        font-size: 72px;
+        font-family: sans-serif;
+        text-decoration: underline;
+      }
+      p {
+        color: #14fff7;
+        font-size: 36px;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Am I real?</h1>
+  </body>
+
+  <script>
+    //let newParra = document.createElement("p");
+    //console.log(newParra);
+
+    //let html = document.documentElement;
+    //console.log(html);
+    // -----------------------------------------------------
+    // attach elements
+    let newElement = document.createElement("p");
+    newElement.textContent = "Or am I a figment of your imagination?";
+    //step 1 - lets grab the parent
+    let bodyElement = document.querySelector("body");
+    //step 2 - now attach our tag to this body
+    // this time, lets use insertBefore()
+    let scriptElement = document.querySelector("script");
+    // 2. use the insertBefore method
+    bodyElement.insertBefore(newElement, scriptElement);
+
+    // appendChild
+    // bodyElement.appendChild(newElement);
+  </script>
+</html>
