@@ -19,7 +19,9 @@
       let clonedText = parraElement.cloneNode(true);
       bodyElement.appendChild(clonedText);
     }
-
     sayWhat();
+
+    // lets use built in DOM function (from the window object)
+    setInterval(sayWhat, 1000);
   </script>
 </html>
