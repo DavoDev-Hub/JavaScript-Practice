@@ -13,5 +13,11 @@
     // lets grab our <body> element, as well as the item we want to clone which is the <p> element
     let bodyElement = document.querySelector("body");
     let parraElement = document.querySelector(".message");
+
+    // lets define our sayWhat function
+    function sayWhat() {
+      let clonedText = parraElement.cloneNode(true);
+      body.appendChild(clonedText);
+    }
   </script>
 </html>
