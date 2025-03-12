@@ -16,6 +16,17 @@ const getPlayerChoice = function () {
   return selection;
 };
 
+const getComputerChoice = function () {
+  const randomValue = Math.random();
+  if (randomValue < 0.34) {
+    return rock;
+  } else if (randomValue < 0.67) {
+    return paper;
+  } else {
+    return scissors;
+  }
+};
+
 startGameBtn.addEventListener("click", function () {
   if (gameIsRunning) {
     return;
