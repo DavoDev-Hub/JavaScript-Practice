@@ -27,6 +27,20 @@ const getComputerChoice = function () {
   }
 };
 
+const getWinner = function (cChoice, pChoice) {
+  if (cChoice === pChoice) {
+    return "It's a draw!";
+  } else if (
+    (cChoice === rock && pChoice === scissors) ||
+    (cChoice === paper && pChoice === rock) ||
+    (cChoice === scissors && pChoice === paper)
+  ) {
+    return "Computer wins!";
+  } else {
+    return "Player wins!";
+  }
+};
+
 startGameBtn.addEventListener("click", function () {
   if (gameIsRunning) {
     return;
@@ -34,7 +48,8 @@ startGameBtn.addEventListener("click", function () {
   gameIsRunning = true;
   console.log("Game is starting...");
   const playerSelection = getPlayerChoice();
-  console.log(playerSelection);
+  const ComputerChoice = getComputerChoice();
+  getWinner(ComputerChoice, playerSelection);
 });
 
 // const start = function startGame() {
