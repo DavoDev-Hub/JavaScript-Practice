@@ -24,6 +24,12 @@ const toggleMNovieModal = () => {
   toggleBackdrop();
 };
 
+const clearMovieInput = () => {
+  for (const usrInput of userInputs) {
+    usrInput.value = "";
+  }
+};
+
 const cancelAddMovieHandler = () => {
   toggleMNovieModal();
 };
@@ -49,6 +55,11 @@ const addMovieHandler = () => {
     image: imageUrlValue,
     rating: ratingValue,
   };
+
+  movies.push(newMovie);
+  console.log(movies);
+  toggleMNovieModal();
+  clearMovieInput();
 };
 
 const backdropClickHandler = () => {
