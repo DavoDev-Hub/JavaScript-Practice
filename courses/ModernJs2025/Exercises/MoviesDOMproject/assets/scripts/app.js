@@ -10,6 +10,7 @@ const confirmAddMovieButton = cancelAddMovieButton.nextElementSibling;
 const userInputs = addMovieModal.querySelectorAll("input");
 // const userInputs = addMovieModal.getElementsByTagName('input');
 const entryTextSection = document.getElementById("entry-text");
+// const entryTextSection = document.getElementById('entry-text');
 
 const movies = [];
 
