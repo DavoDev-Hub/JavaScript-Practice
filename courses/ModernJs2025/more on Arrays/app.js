@@ -1,11 +1,12 @@
+// usual way to create an array
 // const numbers = [1, 2, 3];
 // console.log(numbers);
 
 // // const moreNumbers = Array(5, 2);
 // // console.log(moreNumbers);
 
-// // const yetMoreNumbers = Array.of(1, 2);
-// // console.log(yetMoreNumbers);
+// const yetMoreNumbers = Array.of(1, 2, 3, 4); // always creates an array
+// console.log(yetMoreNumbers); // [1, 2, 3, 4]
 
 // const listItems = document.querySelectorAll('li');
 // console.log(listItems);
@@ -13,8 +14,8 @@
 // const arrayListItems = Array.from(listItems);
 // console.log(arrayListItems);
 
-// const hobbies = ['Cooking', 'Sports'];
-// const personalData = [30, 'Max', {moreDetail: []}];
+const hobbies = ["Cooking", "Sports"];
+const personalData = [30, "Max", { moreDetail: [] }];
 
 // const analyticsData = [[1, 1.6], [-5.4, 2.1]];
 
@@ -152,9 +153,9 @@
 
 // console.log(persons, copiedPersons);
 
-const nameData = ['Max', 'Schwarz', 'Mr', 30];
+// const nameData = ["Max", "Schwarz", "Mr", 30];
 // const firstName = nameData[0];
 // const lastName = nameData[1];
 
-const [ firstName, lastName, ...otherInformation ] = nameData;
-console.log(firstName, lastName, otherInformation);
+// const [firstName, lastName, ...otherInformation] = nameData;
+// console.log(firstName, lastName, otherInformation);
