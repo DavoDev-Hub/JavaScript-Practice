@@ -36,13 +36,13 @@
 // hobbies.shift(); // removes the first element of the array
 // console.log(hobbies);
 
-const hobbies = ["Sports", "Cooking", "Videogames"]; // array of strings
+// const hobbies = ["Sports", "Cooking", "Videogames"]; // array of strings
 // hobbies[1] = "Coding"; // overwrites the second element
 // hobbies[5] = "Reading"; // rarely used
 // console.log(hobbies, hobbies[4]);
 
-hobbies.splice(2, 0, "Good Food"); // adds 'Good Food' at index 1
-console.log(hobbies);
+// hobbies.splice(2, 0, "Good Food"); // adds 'Good Food' at index 1
+// console.log(hobbies);
 
 // const removedElements = hobbies.splice(-2, 1);
 // console.log(hobbies);
