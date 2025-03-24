@@ -8,17 +8,19 @@
 // const yetMoreNumbers = Array.of(1, 2, 3, 4); // always creates an array
 // console.log(yetMoreNumbers); // [1, 2, 3, 4]
 
-// const listItems = document.querySelectorAll('li');
+// const listItems = document.querySelectorAll('li'); // returns a NodeList
 // console.log(listItems);
-
-// const arrayListItems = Array.from(listItems);
+// const arrayListItems = Array.from(listItems); // converts a NodeList to an array
 // console.log(arrayListItems);
 
-const hobbies = ["Cooking", "Sports"];
-const personalData = [30, "Max", { moreDetail: [] }];
+// const hobbies = ["Cooking", "Sports"];
+// const personalData = [30, "Max", { moreDetail: [] }]; // array of mixed types
+// console.log(personalData);
 
-// const analyticsData = [[1, 1.6], [-5.4, 2.1]];
-
+// const analyticsData = [
+//   [1, 1.6],
+//   [-5.4, 2.1],
+// ]; // array of arrays
 // for (const data of analyticsData) {
 //   for (const dataPoint of data) {
 //     console.log(dataPoint);
@@ -27,25 +29,26 @@ const personalData = [30, "Max", { moreDetail: [] }];
 
 // console.log(personalData[1]);
 
-// const hobbies = ['Sports', 'Cooking'];
-// hobbies.push('Reading');
-// hobbies.unshift('Coding');
-// const poppedValue = hobbies.pop();
-// hobbies.shift();
+// const hobbies = ["Sports", "Cooking"];
+// hobbies.push("Reading"); // adds to the end of the array
+// hobbies.unshift("Coding"); // adds to the beginning of the array
+// const poppedValue = hobbies.pop(); // removes the last element of the array
+// hobbies.shift(); // removes the first element of the array
 // console.log(hobbies);
 
-// hobbies[1] = 'Coding';
-// // hobbies[5] = 'Reading'; // rarely used
+const hobbies = ["Sports", "Cooking", "Videogames"]; // array of strings
+// hobbies[1] = "Coding"; // overwrites the second element
+// hobbies[5] = "Reading"; // rarely used
 // console.log(hobbies, hobbies[4]);
 
-// hobbies.splice(1, 0, 'Good Food');
-// console.log(hobbies);
+hobbies.splice(2, 0, "Good Food"); // adds 'Good Food' at index 1
+console.log(hobbies);
 
 // const removedElements = hobbies.splice(-2, 1);
 // console.log(hobbies);
 
 // const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
-// // const storedResults = testResults.slice(2);
+// const storedResults = testResults.slice(2);
 // const storedResults = testResults.concat([3.99, 2]);
 
 // testResults.push(5.91);
